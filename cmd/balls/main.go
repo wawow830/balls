@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/wawow830/balls/internal/sequence"
+	"github.com/wawow830/balls/sequence"
 )
 
 func main() {
