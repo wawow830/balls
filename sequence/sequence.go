@@ -42,6 +42,11 @@ func (g *Generator) Next() Record {
 	return record
 }
 
+// Verify reports whether a record's checksum matches its index and value.
+func Verify(record Record) bool {
+	return record.Checksum == checksum(record.Index, record.Value)
+}
+
 func checksum(index, value uint64) string {
 	var payload [16]byte
 	binary.LittleEndian.PutUint64(payload[:8], index)
