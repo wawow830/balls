@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/wawow830/balls/schema/record.schema.json",
+  "title": "Deterministic sequence record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["index", "value", "checksum"],
+  "properties": {
+    "index": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "value": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "checksum": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{16}$"
+    }
+  }
+}
