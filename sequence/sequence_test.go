@@ -30,6 +30,17 @@ func TestKnownSequence(t *testing.T) {
 	}
 }
 
+func TestVerify(t *testing.T) {
+	record := New(42).Next()
+	if !Verify(record) {
+		t.Fatal("generated record did not verify")
+	}
+	record.Value++
+	if Verify(record) {
+		t.Fatal("modified record unexpectedly verified")
+	}
+}
+
 func TestDifferentSeedsDiverge(t *testing.T) {
 	if New(1).Next() == New(2).Next() {
 		t.Fatal("different seeds produced the same first record")
