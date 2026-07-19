@@ -28,6 +28,8 @@ go run ./cmd/balls -count 1000 -seed 42 > testdata.jsonl
 The generator is also available as a small Go package:
 
 ```go
+import "github.com/wawow830/balls/sequence"
+
 generator := sequence.New(42)
 record := generator.Next()
 ```
